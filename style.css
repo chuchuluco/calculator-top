@@ -47,11 +47,11 @@ body {
 
 p {
     margin-right: 10px;
-    font-size: 45px;
+    font-size: 350%;
 }
 
 p.prev {
-    font-size: 25px;
+    font-size: 180%;
 }
 
 .result {
