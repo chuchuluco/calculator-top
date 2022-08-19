@@ -79,13 +79,14 @@ button {
     color: white;
     background: none;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 25px;
     border: none;
 }
 
 .btn.operator {
     background-color: #279AF1;
 }
+
 
 .btn.equal {
     background-color: #CA054D;
@@ -98,5 +99,4 @@ button:hover {
 
 .more-op {
     display: flex;
-    
 }
