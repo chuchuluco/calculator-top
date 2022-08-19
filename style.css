@@ -17,8 +17,7 @@ body {
 
 .calc-container {
     margin-top: 50px;
-    border: 3px solid white;
-    box-shadow: 0px 0px 15px white;
+    border: 3px solid grey;
     border-radius: 15px;
     width: 65vw;
     height: 85vh;
@@ -72,7 +71,10 @@ p.prev {
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
+}
 
+button.zero {
+    grid-column: span 2;
 }
 
 button {
@@ -83,18 +85,24 @@ button {
     border: none;
 }
 
-.btn.operator {
+button.num, button.dot{
+    background-color: #828282;
+}
+
+button.operator {
     background-color: #279AF1;
 }
 
-.btn.dot {
+button.dot {
     font-size: 40%;
+    padding-top: 20px;
 }
 
-.btn.equal {
+button.equal {
     background-color: #CA054D;
+    grid-row: span 2;
 }
 
 button:hover {
-    font-size: 180%;
+    transform: scale(0.98);
 }
