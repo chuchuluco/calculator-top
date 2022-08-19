@@ -28,13 +28,16 @@ function operate(operator, num1, num2) {
 }
 
 function updateDisplay() {
+  
 }
 
 
 let resultDisplay = '';
 
-let resultNumbers = null;
 let result = document.querySelector('div.result');
 const buttons = document.getElementById('calc')
 const numbers = buttons.querySelectorAll('.num')
 
+numbers.forEach(num => {
+  num.addEventListener('click', updateDisplay)
+})
