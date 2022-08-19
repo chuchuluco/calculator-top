@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://kit.fontawesome.com/6fbd70915b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
     <script type="text/javascript" src="app.js" defer></script>
     <meta charset="UTF-8">
@@ -9,34 +10,52 @@
     <title>Calculator</title>
 </head>
 <body>
-    <h1>Digital Calculator</h1>
     <div class="calc-container">
         <div class="screen-container">
-            <div class="preview"></div>
-            <div class="result"></div>
+            <div class="preview"><p class="prev">preview</p></div>
+            <div class="result"><p class="resu">Result</p></div>
         </div>
         <div class="buttons">
-            <button class="btn">AC</button>
-            <button class="btn">erase</button>
-            <button class="btn">%</button>
-            <button class="btn">/</button>
-            <button class="btn">1</button>
-            <button class="btn">2</button>
-            <button class="btn">3</button>
-            <button class="btn">x</button>
-            <button class="btn">4</button>
-            <button class="btn">5</button>
-            <button class="btn">6</button>
-            <button class="btn">-</button>
-            <button class="btn">7</button>
-            <button class="btn">8</button>
-            <button class="btn">9</button>
-            <button class="btn">+</button>
-            <button class="btn">more</button>
-            <button class="btn">0</button>
-            <button class="btn">.</button>
-            <button class="btn">=</button>
+            <button class="btn clear operator">AC</button>
+            <button class="btn delete operator">
+                <i class="fa-regular fa-delete-left"></i>
+            </button>
+            <button class="btn percent operator">
+                <i class="fa-solid fa-percent"></i>
+            </button>
+            <button class="btn divide operator">
+                <i class="fa-solid fa-divide"></i>
+            </button>
+            <button class="btn one">1</button>
+            <button class="btn two">2</button>
+            <button class="btn three">3</button>
+            <button class="btn multiply operator">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <button class="btn four">4</button>
+            <button class="btn five">5</button>
+            <button class="btn six">6</button>
+            <button class="btn subtrac operator">
+                <i class="fa-solid fa-minus"></i>
+            </button>
+            <button class="btn seven">7</button>
+            <button class="btn eight">8</button>
+            <button class="btn nine">9</button>
+            <button class="btn add operator">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+            <button class="btn more">more</button>
+            <button class="btn zero">0</button>
+            <button class="btn dot">.</button>
+            <button class="btn equal">
+                <i class="fa-duotone fa-equals"></i>
+            </button>
         </div>
+    </div>
+    <div class="more-op">
+        <button><i class="fa-solid fa-square-root"></i></button>
+        <button><i class="fa-solid fa-superscript"></i></button>
+        <button><i class="fa-solid fa-pi"></i></button>
     </div>
 </body>
 </html>
