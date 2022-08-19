@@ -22,23 +22,16 @@ function clear() {
 function backspace() {
 }
 
-function appendNumber(number) {
-}
 
-function chooseOperation(operation) {
-}
-
-function compute() {
+function operate(operator, num1, num2) {
+  return operator(num1, num2);
 }
 
 function updateDisplay() {
 }
 
 
-
-
-
-
+let resultDisplay = '';
 
 let resultNumbers = null;
 let result = document.querySelector('div.result');
