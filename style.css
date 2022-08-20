@@ -78,7 +78,7 @@ button.num, button.dot{
     background-color: #828282;
 }
 
-button.operator {
+button.operator, button.clear, button.delete {
     background-color: #279AF1;
 }
 

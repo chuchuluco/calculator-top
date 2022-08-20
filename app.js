@@ -11,7 +11,8 @@ const dotButton = document.querySelector('.dot')
 const equalButton = document.querySelector('.equal')
 const operatorButtons = document.querySelectorAll('.operator')
 
-console.log(numberButtons)
+operatorButtons.forEach((button) =>
+button.addEventListener('click', () => setOperation(button.textContent)))
 
 numberButtons.forEach((button) =>
   button.addEventListener('click', () => updateDisplay(button.textContent))
