@@ -7,6 +7,7 @@ const buttons = document.getElementById('calc')
 const numberButtons = buttons.querySelectorAll('.num')
 const backspaceButton = document.querySelector('.delete')
 const clearButton = document.querySelector('.clear')
+const dotButton = document.querySelector('.dot')
 
 console.log(numberButtons)
 
@@ -15,7 +16,9 @@ numberButtons.forEach((button) =>
 )
 
 backspaceButton.addEventListener('click', backspace)
-clearButton.addEventListener('click', clear )
+clearButton.addEventListener('click', clear)
+dotButton.addEventListener('click', appendPoint)
+
 
 function add(a, b) { 
   return a + b;
@@ -46,14 +49,47 @@ function backspace() {
   resultDisplay.textContent = resultDisplay.textContent.toString().slice(0, -1)
 }
 
+function setOperation(operator) {
+  if (currentOperation !== null) evaluate()
+  firstOperand = resultDisplay.textContent
+  currentOperation = operator
+  resetScreen()
+}
 
-function operate(operator, num1, num2) {
-  return operator(num1, num2);
+function evaluate() {
+  if (currentOperation === null) return
+  if (currentOperation === '÷' && resultDisplay.textContent === '0') {
+    alert("You can't divide by 0!")
+    return
+  }
+  secondOperand = resultDisplay.textContent
+  resultDisplay.textContent = operate(currentOperation, firstOperand, secondOperand)
+  currentOperation = null
+}
+
+function operate(operator, a, b) {
+  a = Number(a)
+  b = Number(b)
+  switch (operator) {
+    case '+':
+      return add(a, b)
+    case '-':
+      return subtract(a, b)
+    case 'x':
+      return multiply(a, b)
+    case '÷':
+      if (b === 0) return null
+      else return divide(a, b)
+    default:
+      return null
+  }
 }
 
 function updateDisplay(number) {
-  resultDisplay.textContent += number
   console.log(resultDisplay)
+  if(resultDisplay.textContent === '0') 
+    resetScreen()
+  resultDisplay.textContent += number
 }
 
 function resetScreen() {
