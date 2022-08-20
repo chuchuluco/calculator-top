@@ -95,3 +95,7 @@ button.equal {
 button:hover {
     transform: scale(0.98);
 }
+
+footer {
+    margin-top: 3vh;
+}
