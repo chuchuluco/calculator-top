@@ -12,8 +12,8 @@ const equalButton = document.querySelector('.equal')
 const operatorButtons = document.querySelectorAll('.operator')
 
 operatorButtons.forEach((button) =>
-button.addEventListener('click', () => setOperation(button.textContent)))
-
+button.addEventListener('click', () => setOperation(button)))
+console.log(operatorButtons)
 numberButtons.forEach((button) =>
   button.addEventListener('click', () => updateDisplay(button.textContent))
 )
@@ -56,7 +56,7 @@ function backspace() {
 function setOperation(operator) {
   if (currentOperation !== null) evaluate()
   firstOperand = resultDisplay.textContent
-  currentOperation = operator
+  currentOperation = convertOperator(operator)
   resetScreen()
 }
 
@@ -109,3 +109,14 @@ function appendPoint() {
 
 
 
+function convertOperator(button) {
+  if(button.className === 'add') {
+    return '+'
+  } if(button.className === 'divide') {
+    return '÷'
+  } if(button.className === 'multiply') {
+    return 'x'
+  } if(button.className === 'subtract') {
+    return '-'
+  }
+}
