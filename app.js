@@ -11,9 +11,10 @@ const dotButton = document.querySelector('.dot')
 const equalButton = document.querySelector('.equal')
 const operatorButtons = document.querySelectorAll('.operator')
 
-operatorButtons.forEach((button) =>
-button.addEventListener('click', () => setOperation(button)))
-console.log(operatorButtons)
+operatorButtons.forEach((operator) => operator.addEventListener('click', () => setOperation(operator))
+)
+
+
 numberButtons.forEach((button) =>
   button.addEventListener('click', () => updateDisplay(button.textContent))
 )
@@ -33,7 +34,7 @@ function subtract(a, b) {
 } ;
 
 function multiply(a, b) {
-  let num = Number((a * b).toFixed(3))
+  let num = Math.round((a * b) * 100) / 100
   return num
 };
 
@@ -110,13 +111,13 @@ function appendPoint() {
 
 
 function convertOperator(button) {
-  if(button.className === 'add') {
+  if(button.className === 'add operator') {
     return '+'
-  } if(button.className === 'divide') {
+  } if(button.className === 'divide operator') {
     return '÷'
-  } if(button.className === 'multiply') {
+  } if(button.className === 'multiply operator') {
     return 'x'
-  } if(button.className === 'subtract') {
+  } if(button.className === 'subtract operator') {
     return '-'
   }
 }
