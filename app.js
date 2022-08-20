@@ -8,6 +8,8 @@ const numberButtons = buttons.querySelectorAll('.num')
 const backspaceButton = document.querySelector('.delete')
 const clearButton = document.querySelector('.clear')
 const dotButton = document.querySelector('.dot')
+const equalButton = document.querySelector('.equal')
+const operatorButtons = document.querySelectorAll('.operator')
 
 console.log(numberButtons)
 
@@ -18,6 +20,7 @@ numberButtons.forEach((button) =>
 backspaceButton.addEventListener('click', backspace)
 clearButton.addEventListener('click', clear)
 dotButton.addEventListener('click', appendPoint)
+equalButton.addEventListener('click', evaluate)
 
 
 function add(a, b) { 
