@@ -1,3 +1,22 @@
+let firstOperand = ''
+let secondOperand = ''
+let currentOperation = null
+
+let resultDisplay = document.querySelector('p.result');
+const buttons = document.getElementById('calc')
+const numberButtons = buttons.querySelectorAll('.num')
+const backspaceButton = document.querySelector('.delete')
+const clearButton = document.querySelector('.clear')
+
+console.log(numberButtons)
+
+numberButtons.forEach((button) =>
+  button.addEventListener('click', () => updateDisplay(button.textContent))
+)
+
+backspaceButton.addEventListener('click', backspace)
+clearButton.addEventListener('click', clear )
+
 function add(a, b) { 
   return a + b;
 };
@@ -17,9 +36,14 @@ function divide(a, b) {
 };
 
 function clear() {
+  resultDisplay.textContent = '0'
+  firstOperand = ''
+  secondOperand = ''
+  currentOperation = null
 }
 
 function backspace() {
+  resultDisplay.textContent = resultDisplay.textContent.toString().slice(0, -1)
 }
 
 
@@ -27,19 +51,21 @@ function operate(operator, num1, num2) {
   return operator(num1, num2);
 }
 
-function updateDisplay() {
-  resultDisplay = "hello"
-  result.textContent = resultDisplay;
+function updateDisplay(number) {
+  resultDisplay.textContent += number
+  console.log(resultDisplay)
+}
+
+function resetScreen() {
+  resultDisplay.textContent = ''
+}
+
+function appendPoint() {
+  if (resultDisplay.textContent === '')
+    resultDisplay.textContent = '0'
+  if (resultDisplay.textContent.includes('.')) return
+  resultDisplay.textContent += '.'
 }
 
 
-let resultDisplay = '';
-
-let result = document.querySelector('p.result');
-const buttons = document.getElementById('calc')
-const numbers = buttons.querySelectorAll('.num')
-
-numbers.forEach(num => {
-  num.addEventListener('click', updateDisplay)
-})
 
