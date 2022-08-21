@@ -79,7 +79,7 @@ function operate(operator, a, b) {
     case '+':
       return add(a, b)
     case '-':
-      console.log(subtract(a, b))
+      return subtract(a, b)
     case 'x':
       return multiply(a, b)
     case '÷':
