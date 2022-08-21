@@ -31,7 +31,7 @@ function add(a, b) {
 
 function subtract(a, b) {
   return a - b;
-} ;
+};
 
 function multiply(a, b) {
   let num = Math.round((a * b) * 100) / 100
@@ -79,7 +79,7 @@ function operate(operator, a, b) {
     case '+':
       return add(a, b)
     case '-':
-      return subtract(a, b)
+      console.log(subtract(a, b))
     case 'x':
       return multiply(a, b)
     case '÷':
